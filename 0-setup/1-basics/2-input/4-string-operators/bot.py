@@ -1,4 +1,10 @@
 #Displaying Beeps health etc
 print("Please enter the number of lives.")
 lives = input()
-print("♥") * 3
+print("Please enter the enrgy level.")
+energy = input()
+print("Please enter the shield level.")
+shield = input()
+print("♥" * int(lives))
+print("♦" * int(energy))
+print("♦" * int(shield))
