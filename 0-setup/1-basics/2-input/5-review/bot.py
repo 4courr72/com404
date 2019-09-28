@@ -113,4 +113,4 @@ You humans aren't as puny as you look.
 Cheers for the fiver, your new power level is.....
 
 """)
-print(special_power * (int(power_units_initial + power_units_initial)))
+print(special_power * (int(power_units_initial + power_units_initial))) #This is not functioning as expected - did start with *3 but seems to deliver power_units_initial to the power of 3
