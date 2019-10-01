@@ -15,7 +15,7 @@ elif (where_in_bedroom == "under the bed"):
 else:
     if (where_to_look == "in the bathroom"):
         print("Where in the bathroom should I look?")
-        where_in_bedroom = input()
+        where_in_bathroom = input()
     elif (where_in_bathroom == "in the bathtub"):
         print("Found a rubber duck but no battery")
     else:
