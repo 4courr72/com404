@@ -1,9 +1,9 @@
 #First exercise of week 2
 print("What type of book is this?")
-book = input()
-#adbook = "adventure"
+book = input() #default is str, would use int() or float() if want a different variable
+ad_book = "adventure"
 print()
-if (book == "adventure"):
+if (book == ad_book): #a single = assigns something to a variable, == compares
     print("I like " + book + " books!")
 print()
 print ("Finished reading book.")
@@ -11,7 +11,7 @@ print ("Finished reading book.")
 #print("What type of book is this?")
 #book = input()
 #print()
-#if (book = "adventure"):
+#if (book == "adventure"):
 #    print("I like " + book + " books!")
 #print()
 #print ("Finished reading book.")
