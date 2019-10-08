@@ -4,7 +4,7 @@ print("How many cables should I remove?")
 #At stores the answer in the variable 'cables'
 cables = int(input())
 
-#Set a count variable ('removed_cables') to zero
+#Set a count variable ('removed_cables') to zero (Prins calls this a control variable)
 removed_cables = 0
 
 #While loop that functions whilst the number of cables removed is less than the total of cables to be removed
