@@ -11,3 +11,4 @@ while bars_current_charge < bars_full_charge:
     print("Charging:","█" * int(bars_current_charge))
 
 print("The battery is fully charged")
+#Comment 15/10/19: Answers published - same but I note I did not put line 9 in brackets after the 'while' - still worked though.
