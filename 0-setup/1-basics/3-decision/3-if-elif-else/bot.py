@@ -19,3 +19,4 @@ else:
     print("I am painting in the right direction!")
 
 #Comments 08-10-19: There are no further solutions posted on SOL at this time (checked 10:40 08/10/19) and is the case across th rest of the activities this week.
+#[Comments 15-10-19: Solutions there now - I note Prins's use of the \n to through a new line, also that he has one comment covering all the 4 directions statments. Otherwise pretty much the same ]
