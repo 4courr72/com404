@@ -11,3 +11,4 @@ if (cover == "soft"):
         print("Soft covers with coils or stitches are great for short books")
 else:
     print("Books with hard covers can be more expensive!")
+#Comment 15/10/19: Answers there now - same as my code
