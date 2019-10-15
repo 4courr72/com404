@@ -14,3 +14,6 @@ for position in range(len(phrase)-1, -1, -1):
 
 #Once FOR loop complete, display 'Done!' with a clear line before. An additional new line to cope with the suppression of lf/cr from FOR loop
 print("\n\nDone!")
+#Comment 15/10/19: Answers published - essentially the same solution. My solution however was a little clunky in the use of lf/cr and text postion: see the part of the answer relating to this below:
+# Identify markings
+#print("\nReversing...\nThe phrase is", end="")
