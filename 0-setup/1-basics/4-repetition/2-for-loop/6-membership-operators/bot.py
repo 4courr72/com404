@@ -22,3 +22,23 @@ print("The phrase is: ",end="")
 for (x in phrase):
     print(x)
 #Mmmm, doesnt work at all. Time for bed me thinks
+
+#Comment 15/10/19: Answerspublished.
+########Prins's answer was:
+
+# Ask user for phrase
+#print("What phrase do you see?")
+#phrase = input()
+
+# Identify markings
+#print("\nReversing...\nThe phrase is", end="")
+
+#reversed = ""
+
+#for letter in phrase:
+#    reversed = "" + reversed
+
+#print(reversed)
+
+#Right, lets look at this.....
+#
