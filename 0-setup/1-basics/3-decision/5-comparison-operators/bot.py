@@ -14,3 +14,4 @@ elif (second_number < first_number):
     print("the second number is the smallest")
 else:
     print("Both are equal!")
+#Comment 15/10/19: Answers there now - Prins answer appears have have incorrectly used < and > the wrong way round. Otherwise pretty similar.
