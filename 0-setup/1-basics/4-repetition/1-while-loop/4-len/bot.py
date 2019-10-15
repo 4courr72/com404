@@ -17,3 +17,5 @@ while char_printed_so_far < char_count:
 
 #and put a CR to get to next line at the end
 print("")
+#Comment 15/10/19: Answers published - although mechanics of answer is the same, I did not need to set a variable to store the les(phrase)
+#I could have just tested against a lens(phrase) statement directly and got the same recult. Prins answer was thus shorter and more efficient code (i.e. used less lines and less memory?)
