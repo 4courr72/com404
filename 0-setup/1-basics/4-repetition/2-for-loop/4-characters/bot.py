@@ -11,3 +11,4 @@ for position in range(0, len(markings), 1):
 
 #Display a 'Done!' message once complete
 print("\nDone!")
+#Commment 15/10/19: Answers published - essentially the same, slightly different local variable names - this time mine being more descriptive :-)
