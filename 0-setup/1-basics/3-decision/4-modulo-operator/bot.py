@@ -7,4 +7,4 @@ if (number % 2 != 0):
     print("The number " + str(number) + " is an odd number")
 else:
     print("The number " + str(number) + " is an even number")
-
+#[Comments 15-10-19: Solutions there now - I note Prins has used '== 0' and I used '!= 0' and have switched the print statements - this gives the same result
