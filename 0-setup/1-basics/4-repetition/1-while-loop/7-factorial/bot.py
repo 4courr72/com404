@@ -18,3 +18,18 @@ while start < number:
     total = total + result
 
 print("The facorial is", result)
+#Comment 15/10/19: Answers published - Prins answer is shorter and slicker, reproduced below:
+
+# Ask user for a number
+#print("Please enter a number?")
+#number = int(input())
+
+# Calculate factorial
+#count = 0
+#total = 1
+
+#while ( count < number ):
+#    count = count + 1
+#    total = total * count
+
+#print("The factorial is", total)
