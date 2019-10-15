@@ -15,3 +15,4 @@ else:
     #For any other input display comment 3
     else:
         print("Not sure which route to take." )
+#Comment 15/10/19: Answers there now - Prins again uses elif to my IF/ELSE statements. Othrwise essentially the same solution.
