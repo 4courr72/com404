@@ -10,3 +10,4 @@ while (cables_avoided < max_live_cables):
     cables_avoided = cables_avoided + 1
     print("Done!", cables_avoided, "cables avoided.")
 #Comment 15/10/19: Answers published - same solution
+#Had to redo commit comment
