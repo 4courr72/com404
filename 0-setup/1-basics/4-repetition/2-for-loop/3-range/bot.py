@@ -12,5 +12,6 @@ for number in range (2, brightness + 1, 2):
     print() #..to put a lf/cr in between paired statements
 
 print("Adjustments complete!")
-
+#Commment 15/10/19: Answers published - essentially the same, I used the less descriptive local (to the 'for' statement) variable 'number'
+#Prins's answer slightly easier to follow as he used 'brightness' for the local variable.
 
