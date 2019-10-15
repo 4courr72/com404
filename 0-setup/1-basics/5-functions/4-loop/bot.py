@@ -1,6 +1,5 @@
 #Define a function 'cross_bridge' with a parameter for the distance of the bridge crossed in steps (I will call this 'steps')
 def cross_bridge(steps):
-    steps_to_go = steps
 
     #Print a message for each step
     for count in range (steps):
