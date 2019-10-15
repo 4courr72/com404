@@ -29,3 +29,5 @@ else:
                 print("Found some tools but no battery.")
         else:
             print("I do not know where that is but I will keep looking.")
+#Comment 15/10/19: Answers there now - Prins has used elifs for each place group as opposed to my used of nested IF/ELSE statements. Same result.
+#I aslo note Prins use of blank lines which does make if easier to follow.
