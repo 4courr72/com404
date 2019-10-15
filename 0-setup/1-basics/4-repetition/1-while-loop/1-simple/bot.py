@@ -11,4 +11,5 @@ removed_cables = 0
 while (removed_cables < cables):
     removed_cables = removed_cables + 1 #Increments the cables_removed variable by one for each time round the loop
     print("Removed cable.")
+#Comment 15/10/19: Answers published - same solution but I put print of removed cable after the increment line (line 12)
 
