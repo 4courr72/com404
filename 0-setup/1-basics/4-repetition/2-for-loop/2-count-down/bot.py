@@ -15,3 +15,5 @@ for count in range (distance):
 
 print()
 print("We have reached the cave!")
+#Commment 15/10/19: Answers published - I did it a long winded way and should have used the 'for count in range(distance, 0, -1):' statement
+#to make it slicker.  ended up using a decrement statement (line 14) to acheive the same effect.
