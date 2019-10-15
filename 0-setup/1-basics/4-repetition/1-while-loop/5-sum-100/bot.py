@@ -14,3 +14,4 @@ while count < 101: #Set at 101 so we include the final number '100' in our count
     count = count + 1
 
 print("...Done! The answer is", current_total)
+#Cmment 15/10/19: Answers available - quite diferent in the way we set the variables and coped with the inclusion of the 100th number. Essential got same result though.
