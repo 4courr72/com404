@@ -31,3 +31,5 @@ else:
 #Used whilst testing: print(even_counter)
 
 print("There were " + str(even_counter) + " even and " + str(odd_counter) + " odd numbers.")
+#Comment 15/10/19: Answers there now - again, method very similar but Prins uses '== 0' and I use '!= 0' with cooresponding odd and even statements switched round.
+#I also note Prins uses  "There were", even_numbers, "even and", .....etc whilst I used "there were " + . I prefer Prins use of the comma as it gives a space in the output and is cleaner.
