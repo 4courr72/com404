@@ -11,3 +11,4 @@ if (hear == "grrr") and (see == "two red eyes"):
     print("There is a scary creature. I should get out of here!")
 else:
     print("I am a little scared but I will continue.")
+#Comment 15/10/19: Answers there now - same solution
