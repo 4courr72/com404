@@ -15,4 +15,6 @@ while asked_for_so_far < quantity:
     total = total + int(input())
 
 print("The answer is", total)
+#Comment 15/10/19: Answers published - very similar but Prins stores the inputted number into a variable called 'Number' where as I just use the direct input
+#could argee the reverse of a comment on a previuos example where mine is more efficient because I am using less memory?
 
