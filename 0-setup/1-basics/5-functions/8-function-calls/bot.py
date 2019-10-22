@@ -19,7 +19,9 @@ def mirrored_word(word):
     print(word, "| Need to write this bit")
 
 def repeat_word(word):
-    print("DDDDD")
+    print("How many times would you like to print your word?")
+    times_to_repeat = int(input())
+    print(word * times_to_repeat)
 
 def run():
     print("What is your word?")
