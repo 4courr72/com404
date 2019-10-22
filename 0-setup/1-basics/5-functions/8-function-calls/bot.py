@@ -19,8 +19,7 @@ def mirrored_word(word):
     print(word, "| Need to write this bit")
 
 def repeat_word(word):
-    print("How many times would you like to display your word?")
-    time_repeat = int(input())
+    print("DDDDD")
 
 def run():
     print("What is your word?")
@@ -48,10 +47,10 @@ def run():
         upper_case_word(word)
     elif selection == 4:
         print("We are going to option 4")
-        upper_case_word(word)
+        mirrored_word(word)
     elif selection == 5:
         print("We are going to option 5")
-        upper_case_word(word)
+        repeat_word(word)
     else:
         print("end of test") #Used whilst building to test functionality
 
