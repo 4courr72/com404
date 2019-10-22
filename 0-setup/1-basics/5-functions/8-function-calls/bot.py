@@ -1,16 +1,19 @@
-#Define a function to display the user's inputted word inan ascii art box
+#Define a function to display the user's inputted word in an ascii art box
 
 def ascii_art_box(word):
-    print("Performing the ascii art box function")
-    #print("*" * (len(word))
-    #print("*" word "*")
-    #print("*" * (len(word))
+    print("Performing the ascii art box function") #Inserted whilst testing
+    length = len(word)
+    print("*" * (length + 4))
+    print("*", word, "*")
+    print("*" * (length + 4))
+    #print(length) - used this during testing
 
 def lower_case_word(word):
-    print(lower(word))
+#    print(lower(word)) - my origianl statement that didnt work
+    print(word.lower())
 
 def upper_case_word(word):
-    print(upper(word))
+    print(word.upper())
 
 def mirrored_word(word):
     print(word, "| Need to write this bit")
@@ -34,12 +37,23 @@ def run():
     Please type the number corresponding to your selection.""")
     selection = int(input())
     print(selection) #Put in for testing
-    if selection == "1":
+    if selection == 1:
+        print("We are going to option 1")
         ascii_art_box(word)
-    elif selection == "2":
+    elif selection == 2:
+        print("We are going to option 2")
         lower_case_word(word)
+    elif selection == 3:
+        print("We are going to option 3")
+        upper_case_word(word)
+    elif selection == 4:
+        print("We are going to option 4")
+        upper_case_word(word)
+    elif selection == 5:
+        print("We are going to option 5")
+        upper_case_word(word)
     else:
-        print("end of test")
+        print("end of test") #Used whilst building to test functionality
 
 run()
 
