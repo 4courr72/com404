@@ -19,11 +19,16 @@ def line_both(word):
 #Define grid module
 def grid(word, rows, columns):
     printed_columns = columns
-    if printed_columns > 0:
+    while (printed_columns > 0):
         print("*" * len(word), "   ", end = "")
         printed_columns = printed_columns - 1
-    printed_columns = printed_columns
-    if printed_columns > 0:
+    printed_columns = columns
+    print("\n")
+    while (printed_columns > 0):
+        print(word, "|", " ", end = "")
+        printed_columns = printed_columns - 1
+    printed_columns = columns
+    while (printed_columns > 0):
         print("*" * len(word), "   ")
         printed_columns = printed_columns - 1
 
