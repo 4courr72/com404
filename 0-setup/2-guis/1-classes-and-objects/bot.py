@@ -13,7 +13,7 @@ class bot:
 
     def display_age(self):
         print(self.age)
-        print("     $  $")       
+        print("     $  $")
         print("     |  |")
         print("   ********")
         print("  **********")
@@ -41,7 +41,9 @@ class bot:
         bot1.display_shield()
 
     def __str__(self):
-        return("name="+self.name, "age="+str(self.age))
+        return("name="+self.name), ("age="+str(self.age))
+        #return("age="+str(self.age))
+        #return("energy="+str(self.energy))
 
 
 bot1 = bot("Ross", 53, 10, 20)
