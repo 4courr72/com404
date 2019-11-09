@@ -65,6 +65,23 @@ class bot:
         #return("age="+str(self.age))
         #return("energy="+str(self.energy))
 
+#The set of 'get' methods
+    def get_age(self):
+        return self.age
+
+    def get_energy(self):
+        return self.energy
+
+    def get_name(self):
+        return self.name
+
+    def get_shield(self):
+        return self.shield_level
+
+    def set_name(self):
+        self.name = name
+
+
 #An object of bot [this object is bot1]
 #bot1 = bot("Ross", 53, 10, 20)
 

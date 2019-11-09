@@ -10,6 +10,7 @@ class SuperBot(bot):
     def get_super_power_level(self):
         return self.super_power_level
 
+#Unsure how you would use the set method - ask Prins
     def set_super_power_level(self, super_power_level):
         self.super_power_level = super_power_level
 
