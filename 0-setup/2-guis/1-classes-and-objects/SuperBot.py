@@ -13,4 +13,5 @@ class SuperBot(bot):
     def set_super_power_level(self, super_power_level):
         self.super_power_level = super_power_level
 
-#bot1 = SuperBot("Ross", 53, 10, 20)
+
+#bot1 = SuperBot("Ross", 53, 10, 20) - part of my testing
