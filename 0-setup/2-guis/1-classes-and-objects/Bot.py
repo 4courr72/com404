@@ -39,10 +39,26 @@ class bot:
         print("    VV")
 
     def display_summary(self):
-        bot1.display_name()
-        bot1.display_energy()
-        bot1.display_shield()
+        self.display_name()
+        self.display_energy()
+        self.display_shield()
 
+    def decrement_energy(self):
+        self.energy = self.energy - 1
+
+    def decrement_shield(self):
+        self.shield_level = self.shield_level - 1
+
+    def increment_age(self):
+        self.age = self.age + 1
+
+    def increment_energy(self):
+        self.energy = self.energy + 1
+
+    def increment_shield(self):
+        self.shield_level = self.shield_level + 1
+
+#This still a work in progress section....
     def __str__(self):
         return("name="+self.name + ",age="+str(self.age))
         #("age="+str(self.age))
