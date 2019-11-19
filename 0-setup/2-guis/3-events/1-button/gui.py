@@ -1,4 +1,5 @@
 from tkinter import *
+from tkinter import messagebox #Note - need to inport this for the 'messagebox' function to work!
 
 class Gui(Tk):
     
@@ -34,6 +35,8 @@ class Gui(Tk):
         #Create
         self.tickets_entry = Entry()
         self.tickets_entry.grid(row=2, column=0)
+        self.tickets_entry.get()
+        return self.tickets_entry.get
 
         #Style
         self.tickets_entry.configure(   width=20,
@@ -48,3 +51,16 @@ class Gui(Tk):
         self.buy_button.configure(  width=15,
                                     text="Buy",
                                     font="Arial 14")
+
+        #Event
+        self.buy_button.bind("<ButtonRelease-1>", self.__buy_button_clicked)
+
+    def __buy_button_clicked(self, event):
+        # print(self.tickets_entry.get()) - used this to test the get element
+        tickets = int(self.tickets_entry.get())
+        if (tickets == 1):
+            messagebox.showinfo("Purchased!", "You have purchased 1 ticket!")
+        elif (tickets > 1):
+            messagebox.showinfo("Purchased!", "You have purchased {} ticket!".format(tickets))
+        else:
+            messagebox.showinfo("Purchased!", "You have entered an invalid number of tickets!")
