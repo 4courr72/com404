@@ -50,12 +50,19 @@ class Gui(Tk):
         #Style
         self.lyric_input.configure( width=30)
 
+
     def __add_add_button(self):
         #Create
         self.add_button = Button(self.inner_frame)
         self.add_button.pack(side=RIGHT)
         #Style
         self.add_button.configure(  text="Add")
+        #Event
+        self.add_button.bind("<ButtonRelease-1>", self.__add_button_clicked)
+
+    def __add_button_clicked(self, event):
+        #print(self.lyric_input.get()) #- used this to test the get element
+        self.lyric_scrollbox.insert(END, self.lyric_input.get())
 
     def __add_output_label(self):
         #Create
