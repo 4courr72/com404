@@ -201,11 +201,12 @@ class Gui(Tk):
     def __add_q3yes_checkbutton(self):
         #Create
         CheckVarYes3 = IntVar()
-        self.q3yes_checkbutton = Checkbutton(self.q3frame, text="Yes", font="Ariel 12", variable = CheckVarYes3)
+        self.q3yes_checkbutton = Checkbutton(self.q3frame, text="Yes", font="Ariel 12", variable = CheckVarYes3, )
         self.q3yes_checkbutton.pack(side=RIGHT)
         #Style
 
         #Event
+        return(CheckVarYes3)
 
     def __add_check_button(self):
         #Create
@@ -215,3 +216,11 @@ class Gui(Tk):
         self.check_button.configure(    text="Check",
                                         font="Arial 12")
         #Event
+        self.check_button.bind("<ButtonRelease-1>", self.__check_button_clicked)
+
+    def __check_button_clicked(self, event):
+        print(CheckVarYes3)
+        if (CheckVarYes3 == 1):
+            print("Your passport is validated for your journey")
+        else:
+            print("Your passport is NOT validated for your journey! Seek further assistance from the Passport Office!")
