@@ -203,13 +203,13 @@ class Gui(Tk):
 
     def __add_q3yes_checkbutton(self):
         #Create
-        CheckVarYes3 = IntVar()
-        self.q3yes_checkbutton = Checkbutton(self.q3frame, text="Yes", font="Ariel 12", variable=CheckVarYes3)
+        self.q3_is_yes = IntVar()
+        self.q3yes_checkbutton = Checkbutton(self.q3frame, text="Yes", font="Ariel 12", variable=self.q3_is_yes)
         self.q3yes_checkbutton.pack(side=RIGHT)
         #Style
 
         #Event
-        return(CheckVarYes3)
+        #return(CheckVarYes3)
 
     def __add_check_button(self):
         #Create
@@ -222,11 +222,12 @@ class Gui(Tk):
         self.check_button.bind("<ButtonRelease-1>", self.__add_check_button_clicked)
 
     def __add_check_button_clicked(self, event):
-        CheckVarYes3 = (self.q3yes_checkbutton.get())
+        print(self.q3_is_yes.get())
         #print("Hello") - test to make sure this section is invoked (it is)
-        print("Status of Yes 3 Checkbox is %d" % (CheckVarYes3.get())) #Additional check to see if I can print a variable (no luck so far)
+        #print("Status of Yes 3 Checkbox is %d" % (CheckVarYes3.get())) #Additional check to see if I can print a variable (no luck so far)
         #print(CheckVarYes3.get())
         #if (CheckVarYes3 == 1):
         #    print("Your passport is validated for your journey")
         #else:
         #    print("Your passport is NOT validated for your journey! Seek further assistance from the Passport Office!")
+#Got some help from Prins about finding the value of the checjbutton - I need to have self. in front of the variable or it wont be callable from outside.
