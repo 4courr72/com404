@@ -11,6 +11,7 @@ class Gui(Tk):
         self.title("Passport Checker")
         
         # add components
+        CheckVarYes3 = IntVar()
         self.__add_heading_label()
         self.__add_q1_label()
         self.__add_q1frame()
@@ -30,7 +31,9 @@ class Gui(Tk):
         self.__add_q3no_checkbutton()
         #self.__add_q3yes_label()
         self.__add_q3yes_checkbutton()
+        #self.add_check_button_clicked()
         self.__add_check_button()
+        
         
     def __add_heading_label(self):
         #Create
@@ -146,7 +149,7 @@ class Gui(Tk):
     def __add_q2yes_checkbutton(self):
         #Create
         CheckVarYes2 = IntVar()
-        self.q2yes_checkbutton = Checkbutton(self.q2frame, text="Yes", font="Ariel 12", variable = CheckVarYes2)
+        self.q2yes_checkbutton = Checkbutton(self.q2frame, text="Yes", font="Ariel 12", variable=CheckVarYes2)
         self.q2yes_checkbutton.pack(side=RIGHT)
         #Style
 
@@ -201,12 +204,12 @@ class Gui(Tk):
     def __add_q3yes_checkbutton(self):
         #Create
         CheckVarYes3 = IntVar()
-        self.q3yes_checkbutton = Checkbutton(self.q3frame, text="Yes", font="Ariel 12", variable = CheckVarYes3, )
+        self.q3yes_checkbutton = Checkbutton(self.q3frame, text="Yes", font="Ariel 12", variable=CheckVarYes3)
         self.q3yes_checkbutton.pack(side=RIGHT)
         #Style
 
         #Event
-        return(CheckVarYes3)
+        #return(CheckVarYes3)
 
     def __add_check_button(self):
         #Create
@@ -216,11 +219,12 @@ class Gui(Tk):
         self.check_button.configure(    text="Check",
                                         font="Arial 12")
         #Event
-        self.check_button.bind("<ButtonRelease-1>", self.__check_button_clicked)
+        self.check_button.bind("<ButtonRelease-1>", self.__add_check_button_clicked)
 
-    def __check_button_clicked(self, event):
-        print(CheckVarYes3)
-        if (CheckVarYes3 == 1):
-            print("Your passport is validated for your journey")
-        else:
-            print("Your passport is NOT validated for your journey! Seek further assistance from the Passport Office!")
+    def __add__check_button_clicked(self, event):
+        #print("Hello") - test to make sure this is invoked
+        print("Status of Yes 3 Checkbox is %d" % (CheckVarYes3()))
+        #if (CheckVarYes3 == 1):
+        #    print("Your passport is validated for your journey")
+        #else:
+        #    print("Your passport is NOT validated for your journey! Seek further assistance from the Passport Office!")
