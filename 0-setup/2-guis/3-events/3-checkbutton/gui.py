@@ -209,7 +209,7 @@ class Gui(Tk):
         #Style
 
         #Event
-        #return(CheckVarYes3)
+        return(CheckVarYes3)
 
     def __add_check_button(self):
         #Create
@@ -221,9 +221,11 @@ class Gui(Tk):
         #Event
         self.check_button.bind("<ButtonRelease-1>", self.__add_check_button_clicked)
 
-    def __add__check_button_clicked(self, event):
-        #print("Hello") - test to make sure this is invoked
-        print("Status of Yes 3 Checkbox is %d" % (CheckVarYes3()))
+    def __add_check_button_clicked(self, event):
+        CheckVarYes3 = (self.q3yes_checkbutton.get())
+        #print("Hello") - test to make sure this section is invoked (it is)
+        print("Status of Yes 3 Checkbox is %d" % (CheckVarYes3.get())) #Additional check to see if I can print a variable (no luck so far)
+        #print(CheckVarYes3.get())
         #if (CheckVarYes3 == 1):
         #    print("Your passport is validated for your journey")
         #else:
