@@ -15,16 +15,16 @@ class AnimatedGui(Tk):
 
         # set animation attributes
         self.plane_x_pos = 0
-        self.plane_y_pos = 250
+        self.plane_y_pos = 190
         self.plane_x_change = 1
         self.plane_y_change = 0
 
         self.num_ticks = 0
 
         # add components
-        self.add_plane_frame()
         self.add_plane_image_label()
-        self
+        self.__add_up_button()
+        self.__add_down_button()
         
         # start the timer
         self.tick()
@@ -33,12 +33,12 @@ class AnimatedGui(Tk):
     def tick(self):
 
         #Check right side
-        if(self.plane_x_pos >439):
-            self.figure1_x_change = -1
+        if(self.plane_x_pos >459):
+            self.plane_x_change = -1
 
         #Check left side
         if(self.plane_x_pos <0):
-            self.figure1_x_change = 1
+            self.plane_x_change = 1
 
         #Move plane side to side
         self.plane_x_pos = self.plane_x_pos + self.plane_x_change
@@ -53,6 +53,36 @@ class AnimatedGui(Tk):
         self.plane_image_label.place(x=self.plane_x_pos,
                                     y=self.plane_y_pos)
         self.plane_image_label.configure(image=self.plane_image)
+
+    def __add_up_button(self):
+        self.up_button = Button()
+        self.up_button.place(x=100, y=400)
+
+        #Style
+        self.up_button.configure(  width=7,
+                                    text="UP",
+                                    font="Arial 18")
+
+        #Event
+        self.up_button.bind("<ButtonRelease-1>", self.__up_button_clicked)
+
+    def __add_down_button(self):
+        self.down_button = Button()
+        self.down_button.place(x=300, y=400)
+
+        #Style
+        self.down_button.configure(  width=7,
+                                    text="DOWN",
+                                    font="Arial 18")
+
+                #Event
+        self.down_button.bind("<ButtonRelease-1>", self.__down_button_clicked)
+
+    def __up_button_clicked(self, event):
+        self.plane_y_change = -1
+
+    def __down_button_clicked(self, event):
+        self.plane_y_change = 1
 
 # the object
 if __name__ == "__main__":
