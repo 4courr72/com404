@@ -1,5 +1,5 @@
 from tkinter import *
-#from tkinter import messagebox
+from tkinter import messagebox
 
 class Gui(Tk):
     
@@ -79,6 +79,10 @@ class Gui(Tk):
                                             bg="#fee",
                                             width=47)
         #Event
+        self.subscribe_button.bind ("<ButtonRelease-1>", self.__subscribe_button_clicked)
+
+    def __subscribe_button_clicked(self, event):
+         messagebox.showinfo("Newsletter", "Subscribed!")
 
 # the object
 if __name__ == "__main__":
