@@ -27,9 +27,8 @@ class Gui(Tk):
         self.__add_email_entry()
         self.__add_email_image_label()
         self.__add_frequency_label()
-        self.__add_frequency_menu_button()
+        self.__add_menu_button()
         self.__add_subscribe_button()
-        self.menu()
         
     #Define components
     def __add_outer_frame(self):
@@ -88,17 +87,20 @@ class Gui(Tk):
         self.frequency_label.configure( text="Type")
         #Event
 
-    def __add_frequency_menu_button(self):
-        self.frequency_menu_button = Menubutton(self.outer_frame)
-        self.frequency_menu_button.grid(row=3, column=1, sticky=W, pady=10)
-        self.frequency_menu_button.configure(  text="Weekly",
-                                        relief=RAISED,
-                                        width=34)
+    def __add_menu_button(self):
+        self.menu_button = Menubutton(self.outer_frame, text="Weekly")
+        self.menu_button.grid(row=3, column=1, sticky=W, pady=10)
+        self.menu_button.configure(  relief=RAISED,
+                                                width=34)
 
-    def menu(self):
-        self.menu = Menu(self.frequency_menu_button)
-        self.menu.add_checkbutton(label="Monthly", variable=IntVar())
-        self.menu.add_checkbutton(label="Yearly", variable=IntVar())
+        yearly_sub = IntVar()
+        monthly_sub = IntVar()
+        weekly_sub = IntVar()
+        self.menu_button.menu = Menu(self.menu_button)
+        #self.frequency_menu_button ['menu']=frequency_menu_button.menu
+        self.menu_button.menu.add_radiobutton(label="Weekly", variable=weekly_sub)
+        self.menu_button.menu.add_radiobutton(label="Monthly", variable=monthly_sub)
+        self.menu_button.menu.add_radiobutton(label="Yearly", variable=yearly_sub)
 
     def __add_subscribe_button(self):
         #Create
