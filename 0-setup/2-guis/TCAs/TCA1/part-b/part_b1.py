@@ -13,7 +13,11 @@ class Gui(Tk):
 
         # set window attributes
         self.title("Newsletter")
-        self.configure(bg="#ccc", height=200, width=360)
+        self.configure(bg="#ccc", height=235, width=360)
+
+        # Set variables
+        #dropvariable = StringVar(master)
+        #dropvariable.set("Weekly")
 
         # add components
         self.__add_outer_frame()
@@ -22,7 +26,10 @@ class Gui(Tk):
         self.__add_email_label()
         self.__add_email_entry()
         self.__add_email_image_label()
+        self.__add_frequency_label()
+        self.__add_frequency_menu_button()
         self.__add_subscribe_button()
+        self.menu()
         
     #Define components
     def __add_outer_frame(self):
@@ -73,10 +80,30 @@ class Gui(Tk):
         #Style
         self.email_image_label.configure(   image=self.default_image)
 
+    def __add_frequency_label(self):
+        #Create
+        self.frequency_label = Label(self.outer_frame)
+        self.frequency_label.grid(row=3, column=0, padx=10, sticky=E)
+        #Style
+        self.frequency_label.configure( text="Type")
+        #Event
+
+    def __add_frequency_menu_button(self):
+        self.frequency_menu_button = Menubutton(self.outer_frame)
+        self.frequency_menu_button.grid(row=3, column=1, sticky=W, pady=10)
+        self.frequency_menu_button.configure(  text="Weekly",
+                                        relief=RAISED,
+                                        width=34)
+
+    def menu(self):
+        self.menu = Menu(self.frequency_menu_button)
+        self.menu.add_checkbutton(label="Monthly", variable=IntVar())
+        self.menu.add_checkbutton(label="Yearly", variable=IntVar())
+
     def __add_subscribe_button(self):
         #Create
         self.subscribe_button = Button(self.outer_frame)
-        self.subscribe_button.grid(row=3, column=0, columnspan=3, pady=30)
+        self.subscribe_button.grid(row=4, column=0, columnspan=3, pady=10)
         #Style
         self.subscribe_button.configure(    text="Subscribe",
                                             bg="#fee",
@@ -85,11 +112,15 @@ class Gui(Tk):
         self.subscribe_button.bind ("<ButtonRelease-1>", self.__subscribe_button_clicked)
 
     def __subscribe_button_clicked(self, event):
-         messagebox.showinfo("Newsletter", "Subscribed!")
+        if(self.email_entry.get() == ""):
+            messagebox.showinfo("Newsletter", "Please enter your email!")
+        else:
+            messagebox.showinfo("Newsletter", "Subscribed!")
 
     def __email_check(self, event):
         if(self.email_entry.get() == ""):
             self.email_image_label.configure(image=self.empty_image)
+            messagebox.showinfo("Newsletter", "Please enter your email!")
         else:
             self.email_image_label.configure(image=self.filled_image)
 
