@@ -15,10 +15,6 @@ class Gui(Tk):
         self.title("Newsletter")
         self.configure(bg="#ccc", height=235, width=360)
 
-        # Set variables
-        #dropvariable = StringVar(master)
-        #dropvariable.set("Weekly")
-
         # add components
         self.__add_outer_frame()
         self.__add_heading_label()
@@ -97,7 +93,6 @@ class Gui(Tk):
         monthly_sub = IntVar()
         weekly_sub = IntVar()
         self.menu_button.menu = Menu(self.menu_button)
-        #self.frequency_menu_button ['menu']=frequency_menu_button.menu
         self.menu_button.menu.add_radiobutton(label="Weekly", variable=weekly_sub)
         self.menu_button.menu.add_radiobutton(label="Monthly", variable=monthly_sub)
         self.menu_button.menu.add_radiobutton(label="Yearly", variable=yearly_sub)
