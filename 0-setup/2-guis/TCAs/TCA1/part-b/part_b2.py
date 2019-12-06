@@ -23,7 +23,7 @@ class Gui(Tk):
         self.__add_email_entry()
         self.__add_email_image_label()
         self.__add_frequency_label()
-        self.add_menu_dropdown()
+        self.__add_menu_dropdown()
         self.__add_subscribe_button()
         
     #Define components
@@ -83,17 +83,18 @@ class Gui(Tk):
         self.frequency_label.configure( text="Type")
         #Event
 
-    def add_menu_dropdown(self):
+    def __add_menu_dropdown(self):
         #Create a variable
-        menu_list = StringVar()
-
-        #A dictionary containing the options
+        self.menu_list = StringVar()
         choices = {'Yearly', 'Monthly', 'Weekly'}
-        menu_list.set('Weekly') #Setting the default option
-        self.menu_dropdown = OptionMenu(self.outer_frame, menu_list, *choices)
+        self.menu_list.set('Weekly') #Setting the default option
+        #A dictionary containing the options
+        self.menu_dropdown = OptionMenu(self.outer_frame, self.menu_list, *choices)
         self.menu_dropdown.grid(row=3, column=1, sticky=W)
         self.menu_dropdown.configure(   width=33)
-        current_selection = menu_list.get()
+
+        print (self.menu_list.get())
+        ##current_selection = menu_list.()
         #return menu_list
 
     def __add_subscribe_button(self):
@@ -108,7 +109,7 @@ class Gui(Tk):
         self.subscribe_button.bind ("<ButtonRelease-1>", self.__subscribe_button_clicked)
 
     def __subscribe_button_clicked(self, event):
-        #current_selection = menu_list.get()
+        current_selection = self.menu_list.get()
         if(self.email_entry.get() == ""):
             messagebox.showinfo("Newsletter", "Please enter your email!")
         elif(current_selection == "Weekly"):
