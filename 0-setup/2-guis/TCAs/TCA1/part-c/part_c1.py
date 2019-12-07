@@ -211,6 +211,7 @@ class Gui(Tk):
             self.animate_state = 1
             #part of the non-working tick on/off work self.doTick = True
         else:
+            #self.tick(pause) - doesnt work either!
             self.animate_state = 0
             #part of the non-working tick on/off work self.doTick = False
 
