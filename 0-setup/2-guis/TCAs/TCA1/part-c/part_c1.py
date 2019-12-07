@@ -18,6 +18,13 @@ class Gui(Tk):
         self.title("Newsletter")
         self.configure(bg="#ccc", height=435, width=360)
 
+        # set animation attributes
+        self.graphic_x_pos = 20
+        self.graphic_y_pos = 100
+        self.graphic_x_change = 1
+        self.graphic_y_change = -0.6
+
+
         # add components
         self.__add_outer_frame()
         self.__add_heading_label()
@@ -31,8 +38,42 @@ class Gui(Tk):
         self.__add_animate_button()
         self.__add_image_frame()
         self.__add_subscribe_image_label()
+        self.num_ticks = 0
+        #part of the non-working tick on/off work self.doTick = True
         
+        # start the timer
+        #self.tick()
+
     #Define components
+
+    # the timer tick function    
+    def tick(self):
+        #Check to see state of variable for stopping and starting the tick
+        #if doTick == False:
+        #    return - this part I could not get working
+        #Check right side
+        if(self.graphic_x_pos >240):
+            self.graphic_x_change = -1
+
+        #Check left side
+        if(self.graphic_x_pos <0):
+            self.graphic_x_change = 1
+
+        #Check top
+        if(self.graphic_y_pos <0):
+            self.graphic_y_change = 0.6
+
+        #Check bottom
+        if(self.graphic_y_pos >140):
+            self.graphic_y_change = -0.6
+
+        #Move graphic
+        self.graphic_x_pos = self.graphic_x_pos + self.graphic_x_change
+        self.graphic_y_pos = self.graphic_y_pos + self.graphic_y_change
+        self.subscribe_image_label.place(x=self.graphic_x_pos, 
+                                            y=self.graphic_y_pos)
+        self.after(20, self.tick)
+
     def __add_outer_frame(self):
         self.outer_frame = Frame()
         self.outer_frame.place(x=10, y=10, relheight = 0.94, relwidth=0.94)
@@ -137,7 +178,8 @@ class Gui(Tk):
     def __add_subscribe_image_label(self):
         #Create
         self.subscribe_image_label = Label(self.image_frame)
-        self.subscribe_image_label.place(x=10, y=70)
+        self.subscribe_image_label.place(   x=self.graphic_x_pos,
+                                            y=self.graphic_y_pos)
         #Style
         self.subscribe_image_label.configure(image=self.weekly_image)
 
@@ -165,9 +207,12 @@ class Gui(Tk):
 
     def __animate_button_clicked(self, event):
         if(self.animate_state == 0):
+            self.tick()
             self.animate_state = 1
+            #part of the non-working tick on/off work self.doTick = True
         else:
             self.animate_state = 0
+            #part of the non-working tick on/off work self.doTick = False
 
         if(self.animate_state == 0):
             self.animate_button.configure(text="Start Animation")
@@ -176,6 +221,7 @@ class Gui(Tk):
             
         print(self.animate_state)
         print("Animate button clicked")
+        #part of the non-working tick on/off work print(self.doTick)
 
 # the object
 if __name__ == "__main__":
