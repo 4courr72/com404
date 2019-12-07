@@ -10,10 +10,13 @@ class Gui(Tk):
         self.default_image = PhotoImage(file="c:/Data/default.gif")
         self.filled_image = PhotoImage(file="c:/Data/filled1.gif")
         self.empty_image = PhotoImage(file="c:/Data/empty1.gif")
+        self.weekly_image = PhotoImage(file="c:/Data/weekly2.gif")
+        self.monthly_image = PhotoImage(file="c:/Data/monthly2.gif")
+        self.yearly_image = PhotoImage(file="c:/Data/yearly2.gif")
 
         # set window attributes
         self.title("Newsletter")
-        self.configure(bg="#ccc", height=235, width=360)
+        self.configure(bg="#ccc", height=435, width=360)
 
         # add components
         self.__add_outer_frame()
@@ -26,11 +29,13 @@ class Gui(Tk):
         self.__add_menu_dropdown()
         self.__add_subscribe_button()
         self.__add_animate_button()
+        self.__add_image_frame()
+        self.__add_subscribe_image_label()
         
     #Define components
     def __add_outer_frame(self):
         self.outer_frame = Frame()
-        self.outer_frame.place(x=10, y=10, relheight = 0.84, relwidth=0.94)
+        self.outer_frame.place(x=10, y=10, relheight = 0.94, relwidth=0.94)
     
     def __add_heading_label(self):
         #Create
@@ -123,6 +128,18 @@ class Gui(Tk):
         print(self.animate_state)
         #Event
         self.animate_button.bind ("<ButtonRelease-1>", self.__animate_button_clicked)
+
+    def __add_image_frame(self):
+        #Create
+        self.image_frame = Frame(self.outer_frame, height=10)
+        self.image_frame.grid(row=7, column=0, columnspan=3)
+
+    def __add_subscribe_image_label(self):
+        #Create
+        self.subscribe_image_label = Label(self.image_frame)
+        self.subscribe_image_label.place(x=0, y=0)
+        #Style
+        self.subscribe_image_label.configure(image=self.weekly_image)
 
     def __subscribe_button_clicked(self, event):
         current_selection = self.menu_list.get()
