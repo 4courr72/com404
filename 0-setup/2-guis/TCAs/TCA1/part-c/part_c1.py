@@ -131,13 +131,13 @@ class Gui(Tk):
 
     def __add_image_frame(self):
         #Create
-        self.image_frame = Frame(self.outer_frame, height=10)
-        self.image_frame.grid(row=7, column=0, columnspan=3)
+        self.image_frame = Frame(self.outer_frame, height=500, width=360)
+        self.image_frame.grid(row=6, column=0, columnspan=3)
 
     def __add_subscribe_image_label(self):
         #Create
         self.subscribe_image_label = Label(self.image_frame)
-        self.subscribe_image_label.place(x=0, y=0)
+        self.subscribe_image_label.place(x=10, y=70)
         #Style
         self.subscribe_image_label.configure(image=self.weekly_image)
 
