@@ -146,11 +146,14 @@ class Gui(Tk):
         if(self.email_entry.get() == ""):
             messagebox.showinfo("Newsletter", "Please enter your email!")
         elif(current_selection == "Weekly"):
+            self.subscribe_image_label.configure(image=self.weekly_image)
             messagebox.showinfo("Newsletter", "You have subscribed to the weekly newsletter! You will receive this every Monday.")
         elif(current_selection == "Monthly"):
-             messagebox.showinfo("Newsletter", "You have subscribed to the monthly newsletter! You will receive this on the first day of each month.")
+            self.subscribe_image_label.configure(image=self.monthly_image)
+            messagebox.showinfo("Newsletter", "You have subscribed to the monthly newsletter! You will receive this on the first day of each month.")
         elif(current_selection == "Yearly"):
-             messagebox.showinfo("Newsletter", "You have subscribed to the yearly newsletter! You will receive this at the start of each year.")
+            self.subscribe_image_label.configure(image=self.yearly_image)
+            messagebox.showinfo("Newsletter", "You have subscribed to the yearly newsletter! You will receive this at the start of each year.")
 
 
     def __email_check(self, event):
