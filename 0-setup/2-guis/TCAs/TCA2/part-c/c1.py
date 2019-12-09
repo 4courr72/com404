@@ -13,6 +13,7 @@ class AnimatedGui(Tk):
         self.default_image = PhotoImage(file="C:/Data/cross2.gif")
         self.figure_gbp_image = PhotoImage(file="C:/Data/figuregbp2.gif")
         self.figure_euro_image = PhotoImage(file="C:/Data/figureeuro2.gif")
+        self.figure_no_currency_image = PhotoImage(file="C:/Data/figure2.gif")
         self.building_image = PhotoImage(file="C:/Data/building1.gif")
 
         # set window attributes
@@ -22,9 +23,8 @@ class AnimatedGui(Tk):
         self.title("TCA2")
 
         # set animation attributes
-        self.plane_x_pos = 0
-        self.plane_y_pos = 70
-        self.plane_x_change = 1
+        self.figure_x_pos = 0
+        self.figure_x_change = 1
 
         self.num_ticks = 0
 
@@ -47,6 +47,18 @@ class AnimatedGui(Tk):
         self.__add_animation_frame()
         self.__add_figure_image_label()
         self.__add_building_image_label()
+        
+
+    def tick(self):
+
+        #Check reaching building
+        if(self.figure_x_pos >300):
+            self.figure_x_change = 0
+
+        #Move figure
+        self.figure_x_pos = self.figure_x_pos + self.figure_x_change
+        self.figure_image_label.place(x=self.figure_x_pos)
+        self.after(10, self.tick)
 
     #Define components
     def __add_heading_label(self):
@@ -195,6 +207,16 @@ class AnimatedGui(Tk):
         self.simulate_button.grid(row=9, column=0, columnspan=2, pady=20)
         #Style
         self.simulate_button.configure( text="Simulate")
+        #Event
+        self.simulate_button.bind("<ButtonRelease-1>", self.__simulate_button_clicked)
+
+    def __simulate_button_clicked(self, event):
+        self.tick()
+        from_currency = (self.from_combobox.get())
+        if(from_currency == "GBP"):
+            self.figure_image_label.configure(image=self.figure_gbp_image)
+        elif(from_currency == "Euros"):
+            self.figure_image_label.configure(image=self.figure_euro_image)
 
     def __add_animation_frame(self):
         #Create
@@ -208,7 +230,18 @@ class AnimatedGui(Tk):
     def __add_figure_image_label(self):
         #Create
         self.figure_image_label = Label(self.animation_frame)
-        self.figure_image_label.place()
+        self.figure_image_label.place(x=self.figure_x_pos, y=70)
+        #Style
+        self.figure_image_label.configure(image=self.figure_no_currency_image)
+
+    def __add_building_image_label(self):
+        #Create
+        self.building_image_label = Label(self.animation_frame)
+        self.building_image_label.place(x=300, y=50)
+        #Style
+        self.building_image_label.configure(image=self.building_image)
+    
+
 # the object
 if __name__ == "__main__":
     gui = AnimatedGui()    
