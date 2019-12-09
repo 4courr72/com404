@@ -1,5 +1,6 @@
 from tkinter import *
 from tkinter import messagebox
+from tkinter import ttk
 
 # the class
 class AnimatedGui(Tk):
@@ -57,30 +58,10 @@ class AnimatedGui(Tk):
         self.entry_and_tick_frame.grid(row=2, column=0, columnspan=2)
         #Style
 
-    def __add_from_label(self):
-        #Create
-        self.from_label = Label()
-        self.from_label.grid(row=3, column=0, padx=20, sticky=W)
-        #Style
-        self.from_label.configure(  text="From")
-
-    def __add_from_combobox(self):
-        #Create
-        self.from_combobox = Combobox(values=("GPB", "Euros"))
-        self.from_combobox.grid(row=4, column=0, columnspan=2)
-        #Style
-        self.from_combobox.configure
-
-    def __add_to_label(self):
-        pass
-
-    def __add_to_combobox(self):
-        pass
-
     def __add_amount_entry(self):
         #Create
         self.amount_entry = Entry(self.entry_and_tick_frame)
-        self.amount_entry.grid(row=0, column=0, columnspan=2, padx=20, sticky=E)
+        self.amount_entry.grid(row=0, column=0, padx=20, sticky=W)
         #Style
         self.amount_entry.configure(width=60)
         #Events
@@ -93,6 +74,35 @@ class AnimatedGui(Tk):
         #Style
         self.tick_or_cross_label.configure(   image=self.default_image)
 
+    def __add_from_label(self):
+        #Create
+        self.from_label = Label()
+        self.from_label.grid(row=3, column=0, padx=20, sticky=W)
+        #Style
+        self.from_label.configure(  text="From")
+
+    def __add_from_combobox(self):
+        #Create
+        self.from_combobox = ttk.Combobox(values=("GBP", "Euros"))
+        self.from_combobox.grid(row=4, column=0, columnspan=2)
+        #Style
+        self.from_combobox.configure(   width=60)
+        self.from_combobox.set("GBP")
+
+    def __add_to_label(self):
+         #Create
+        self.to_label = Label()
+        self.to_label.grid(row=5, column=0, padx=20, sticky=W)
+        #Style
+        self.to_label.configure(  text="To")
+
+    def __add_to_combobox(self):
+        #Create
+        self.to_combobox = ttk.Combobox(values=("Euros", "USD"))
+        self.to_combobox.grid(row=6, column=0, columnspan=2)
+        #Style
+        self.to_combobox.configure(   width=60)
+        self.to_combobox.set("Euros")
 
     def __amount_box_check(self, event):
         if(self.amount_entry.get() == ""):
@@ -105,7 +115,7 @@ class AnimatedGui(Tk):
     def __add_button_frame(self):
         #Create
         self.button_frame = Frame()
-        self.button_frame.grid(row=3, column=0, columnspan=2)
+        self.button_frame.grid(row=7, column=0, columnspan=2)
         #Style
         #Events
 
@@ -141,7 +151,7 @@ class AnimatedGui(Tk):
     def __add__message_label(self):
         #Create
         self.message_label = Label()
-        self.message_label.grid(row=4, column=0, columnspan=2, padx=20, pady=10)
+        self.message_label.grid(row=8, column=0, columnspan=2, padx=20, pady=10)
         #Style
         self.message_label.configure(   text="System Message Displayed Here",
                                         font="Arial 10",
