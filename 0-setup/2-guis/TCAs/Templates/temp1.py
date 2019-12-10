@@ -1,4 +1,6 @@
 from tkinter import *
+from tkinter import messagebox
+from tkinter import ttk
 
 # the class
 class AnimatedGui(Tk):
@@ -61,7 +63,7 @@ class AnimatedGui(Tk):
 
         #Events
 
-        def __add_x_listbox(self):
+    def __add_x_listbox(self):
         #Create
         #width=,  height=,  
         pass
